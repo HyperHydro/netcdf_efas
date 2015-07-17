@@ -69,7 +69,7 @@ class CalcFramework(DynamicModel):
         # re-calculate current model time using current pcraster timestep value
         self.modelTime.update(self.currentTimeStep())
 
-        # for 
+        # for variables other than temperature and maximum temperature, just read them directly
         if self.output['variable_name'] != "temperature" or self.output['variable_name'] != "maximum_temperature":
             pcraster_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_file_name,\
                                                                                self.modelTime.timeStepPCR) 
@@ -83,10 +83,7 @@ class CalcFramework(DynamicModel):
                                                  outputEPSG = self.outputEPSG,\
                                                  method = self.resample_method)
 
-        print self.output['variable_name']
-        
-        pietjes
-        
+        # for temperature and maximum temperature, we have to make sure that maximum temperature is higher than minimum temperature
         if self.output['variable_name'] == "temperature" or self.output['variable_name'] == "maximum_temperature":
             min_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_files['directory']+"/tn", self.modelTime.timeStepPCR)
             max_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_files['directory']+"/tx", self.modelTime.timeStepPCR)
