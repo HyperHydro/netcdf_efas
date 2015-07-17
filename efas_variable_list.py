@@ -24,9 +24,9 @@ description[efas_variable_name]       = 'Daily precipitation between 6 UTC on th
 # rg Downward_surface_solar_radiation) 
 netcdf_short_name[efas_variable_name] = 'downward_surface_solar_radiation'
 netcdf_unit[efas_variable_name]       = 'J.m-2.day-1'
-netcdf_long_name[efas_variable_name]  = 'downward_surface_solar_radiation'
-description[efas_variable_name]       = 'Downward surface solar radiation (J.m-2.day-1). '
-description[efas_variable_name]      += 'The unit is J/m2/day as given in the Lisvap manual p.18 (althoughh there is a tiny error it should be J m-2 d-1 instead of Jm-2 d): '
+netcdf_long_name[efas_variable_name]  = 'calculated_downward_surface_solar_radiation'
+description[efas_variable_name]       = 'Downward surface solar radiation (J.m-2.day-1), see the references for the methodology. '
+description[efas_variable_name]      += 'Note that the unit is J/m2/day as given in the Lisvap manual p.18 (althoughh there is a tiny error it should be J m-2 d-1 instead of Jm-2 d): '
 description[efas_variable_name]      += 'https://ec.europa.eu/jrc/en/publication/eur-scientific-and-technical-research-reports/lisvap-evaporation-pre-processor-lisflood-water-balance-and-flood-simulation-model '
 
 # tn Daily minimum temperature (°C) between 18 UTC and 6 UTC (i.e. during the preceding night) at 2m 
@@ -55,5 +55,5 @@ efas_variable_name = "ws"
 netcdf_short_name[efas_variable_name] = 'wind_speed'
 netcdf_unit[efas_variable_name]       = 'm.s-1'
 netcdf_long_name[efas_variable_name]  = 'daily_mean_wind_speed'
-description[efas_variable_name]       = 'Mean daily wind speed at 10 metres (m/s) calculated from 3-hourly observations (0-24 UTC).'
+description[efas_variable_name]       = 'Mean daily wind speed at 10 m height (m/s) calculated from 3-hourly observations (0-24 UTC).'
 

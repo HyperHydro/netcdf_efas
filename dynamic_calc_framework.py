@@ -69,8 +69,8 @@ class CalcFramework(DynamicModel):
         # re-calculate current model time using current pcraster timestep value
         self.modelTime.update(self.currentTimeStep())
 
-        # open input data 
-        if self.output['variable_name'] != "temperature":
+        # for 
+        if self.output['variable_name'] != "temperature" or self.output['variable_name'] != "maximum_temperature":
             pcraster_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_file_name,\
                                                                                self.modelTime.timeStepPCR) 
             pcr_map_values = vos.readPCRmapClone(v = pcraster_map_file_name,\
@@ -82,7 +82,8 @@ class CalcFramework(DynamicModel):
                                                  inputEPSG = self.inputEPSG,\
                                                  outputEPSG = self.outputEPSG,\
                                                  method = self.resample_method)
-        else:
+
+        if self.output['variable_name'] == "temperature" or self.output['variable_name'] != "maximum_temperature":
             min_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_files['directory']+"/tn", self.modelTime.timeStepPCR)
             max_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_files['directory']+"/tx", self.modelTime.timeStepPCR)
             min_map_values = vos.readPCRmapClone(v = min_map_file_name,\
@@ -103,9 +104,11 @@ class CalcFramework(DynamicModel):
                                                  inputEPSG = self.inputEPSG,\
                                                  outputEPSG = self.outputEPSG,\
                                                  method = self.resample_method)
-            pcr_map_values = 0.50*(min_map_values + \
-                                   max_map_values)
-
+            # make sure that maximum values are higher than minimum values
+            max_map_values = pcr.max(min_map_values, max_map_values)
+            if self.output['variable_name'] == "temperature": pcr_map_values = 0.50*(min_map_values + \
+                                                                                     max_map_values)
+            if self.output['variable_name'] == "maximum_temperature": pcr_map_values = pcr.max(min_map_values, max_map_values)
         
         # for precipitation, converting the unit from mm.day-1 to m.day-1
         if self.output['variable_name'] == "precipitation": pcr_map_values *= 0.001
