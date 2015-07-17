@@ -7,12 +7,27 @@ netcdf_unit       = {}
 netcdf_long_name  = {}
 description       = {}
 
+# pd Mean daily vapour pressure (hPa) 
+efas_variable_name = "pd"
+netcdf_short_name[efas_variable_name] = 'vapour_pressure'
+netcdf_unit[efas_variable_name]       = 'hPa'
+netcdf_long_name[efas_variable_name]  = 'daily_mean_vapour_pressure'
+description[efas_variable_name]       = 'Mean daily vapour pressure (hPa).'
+
 # pr Daily precipitation (mm) between 6 UTC on the day specified and 6 UTC on the next day 
 efas_variable_name = "pr"
 netcdf_short_name[efas_variable_name] = 'precipitation'
 netcdf_unit[efas_variable_name]       = 'm.day-1'
 netcdf_long_name[efas_variable_name]  = 'daily_precipitation'
 description[efas_variable_name]       = 'Daily precipitation between 6 UTC on the day specified and 6 UTC on the next day.'
+
+# rg Downward_surface_solar_radiation) 
+netcdf_short_name[efas_variable_name] = 'downward_surface_solar_radiation'
+netcdf_unit[efas_variable_name]       = 'J.m-2.day-1'
+netcdf_long_name[efas_variable_name]  = 'downward_surface_solar_radiation'
+description[efas_variable_name]       = 'Downward surface solar radiation (J.m-2.day-1). '
+description[efas_variable_name]      += 'The unit is J/m2/day as given in the Lisvap manual p.18 (althoughh there is a tiny error it should be J m-2 d-1 instead of Jm-2 d): '
+description[efas_variable_name]      += 'https://ec.europa.eu/jrc/en/publication/eur-scientific-and-technical-research-reports/lisvap-evaporation-pre-processor-lisflood-water-balance-and-flood-simulation-model '
 
 # tn Daily minimum temperature (°C) between 18 UTC and 6 UTC (i.e. during the preceding night) at 2m 
 efas_variable_name = "tn"
@@ -42,17 +57,3 @@ netcdf_unit[efas_variable_name]       = 'm.s-1'
 netcdf_long_name[efas_variable_name]  = 'daily_mean_wind_speed'
 description[efas_variable_name]       = 'Mean daily wind speed at 10 metres (m/s) calculated from 3-hourly observations (0-24 UTC).'
 
-# pd Mean daily vapour pressure (hPa) 
-efas_variable_name = "pd"
-netcdf_short_name[efas_variable_name] = 'vapour_pressure'
-netcdf_unit[efas_variable_name]       = 'hPa'
-netcdf_long_name[efas_variable_name]  = 'daily_mean_vapour_pressure'
-description[efas_variable_name]       = 'Mean daily vapour pressure (hPa).'
-
-# cr or rg Calculated radiation (KJ/m2/day) 
-#~ efas_variable_name = "cr"
-efas_variable_name = "rg"
-netcdf_short_name[efas_variable_name] = 'calculated_radiation'
-netcdf_unit[efas_variable_name]       = 'KJ/m2/day'
-netcdf_long_name[efas_variable_name]  = 'calculated_radiation'
-description[efas_variable_name]       = 'Calculated radiation (KJ/m2/day), see the reference about its method.'
