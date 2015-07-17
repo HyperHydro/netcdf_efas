@@ -70,7 +70,7 @@ class CalcFramework(DynamicModel):
         self.modelTime.update(self.currentTimeStep())
 
         # for variables other than temperature and maximum temperature, just read them directly
-        if self.output['variable_name'] != "temperature" or self.output['variable_name'] != "maximum_temperature":
+        if self.output['variable_name'] != "temperature" and self.output['variable_name'] != "maximum_temperature":
             pcraster_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_file_name,\
                                                                                self.modelTime.timeStepPCR) 
             pcr_map_values = vos.readPCRmapClone(v = pcraster_map_file_name,\
