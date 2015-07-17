@@ -14,7 +14,7 @@ netcdf_unit[efas_variable_name]       = 'hPa'
 netcdf_long_name[efas_variable_name]  = 'daily_mean_vapour_pressure'
 description[efas_variable_name]       = 'Mean daily vapour pressure (hPa).'
 
-# pr Daily precipitation (mm) between 6 UTC on the day specified and 6 UTC on the next day 
+# pr Daily precipitation (m) between 6 UTC on the day specified and 6 UTC on the next day 
 efas_variable_name = "pr"
 netcdf_short_name[efas_variable_name] = 'precipitation'
 netcdf_unit[efas_variable_name]       = 'm.day-1'
@@ -22,6 +22,7 @@ netcdf_long_name[efas_variable_name]  = 'daily_precipitation'
 description[efas_variable_name]       = 'Daily precipitation between 6 UTC on the day specified and 6 UTC on the next day.'
 
 # rg Downward_surface_solar_radiation) 
+efas_variable_name = "rg"
 netcdf_short_name[efas_variable_name] = 'downward_surface_solar_radiation'
 netcdf_unit[efas_variable_name]       = 'J.m-2.day-1'
 netcdf_long_name[efas_variable_name]  = 'calculated_downward_surface_solar_radiation'
