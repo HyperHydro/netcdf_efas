@@ -23,7 +23,7 @@ from currTimeStep import ModelTime
 import virtualOS as vos
 
 # variable dictionaries:
-import efas_variable_list_final as varDict
+import efas_variable_list as varDict
 
 import logging
 logger = logging.getLogger(__name__)
