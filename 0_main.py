@@ -58,7 +58,7 @@ output['description']   = varDict.description[efas_variable_name]
 
 # change output folder based on system argument
 try:
-   output['folder'] = sys.argv[3]
+   output['folder'] = sys.argv[3]+"/"
 except:
    pass
 
