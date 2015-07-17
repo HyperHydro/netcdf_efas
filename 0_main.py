@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 ###########################################################################################################
 
 # efas_variable_code in a list
-efas_variable_name = ["pd","pr","cr","ta","tn","tx","ws"]
+efas_variable_name = ["pd","pr","rg","ta","tn","tx","ws"]
 
 # obtain efas_variable_code from the system argurment
 try:
