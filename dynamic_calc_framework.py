@@ -83,7 +83,7 @@ class CalcFramework(DynamicModel):
                                                  outputEPSG = self.outputEPSG,\
                                                  method = self.resample_method)
 
-        if self.output['variable_name'] == "temperature" or self.output['variable_name'] != "maximum_temperature":
+        if self.output['variable_name'] == "temperature" or self.output['variable_name'] == "maximum_temperature":
             min_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_files['directory']+"/tn", self.modelTime.timeStepPCR)
             max_map_file_name = pcr.framework.frameworkBase.generateNameT(self.pcraster_files['directory']+"/tx", self.modelTime.timeStepPCR)
             min_map_values = vos.readPCRmapClone(v = min_map_file_name,\
