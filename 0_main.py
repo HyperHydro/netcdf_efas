@@ -95,6 +95,8 @@ def main():
     try:
         os.makedirs(log_file_location)
     except:
+        cmd = 'rm -r '+log_file_location+"/*"
+        os.system(cmd)
         pass
     vos.initialize_logging(log_file_location)
     
