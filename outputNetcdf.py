@@ -32,7 +32,7 @@ class OutputNetcdf():
         if cloneMapFileName != None:\
            self.longitudes, self.latitudes, cellSizeInArcMin = self.set_latlon_based_on_cloneMapFileName(cloneMapFileName)
         if mapattr_dict != None:\
-           self.longitudes, self.latitudes, cellSizeInArcMin = self.set_latlon_based_on_cloneMapFileName(cloneMapFileName)
+           self.longitudes, self.latitudes, cellSizeInArcMin = self.set_latlon_based_on_mapattr_dict(mapattr_dict)
         
         # default netCDF attributes
         important_information = "The dataset was resampled to "+str(cellSizeInArcMin)+" arc minute resolution. "
@@ -43,7 +43,7 @@ class OutputNetcdf():
         self.attributeDictionary['history'    ]  = "The data were provided by Ad de Roo (ad.de-roo@jrc.ec.europa.eu) on 19 November 2014 and then converted by Edwin H. Sutanudjaja (E.H.Sutanudjaja@uu.nl) to netcdf. "
         self.attributeDictionary['history'    ] += important_information 
         self.attributeDictionary['references' ]  = "Ntegeka et al., 2013. EFAS-Meteo: A European daily high-resolution gridded meteorological data set. JRC Technical Reports. doi: 10.2788/51262 ; "
-        self.attributeDictionary['references' ] += "Burek et al., 2013. Evaporation Pre-Processor for the LISFLOOD Water Balance and Flood Simulation Model. JRC Technical Reports. https://solismail.uu.nl/owa/redir.aspx?SURL=6Q5S2vveK4XowrqnrXKcfTo85LKqdv0QN1HiI5EFu5XAIipJaI7SCGgAdAB0AHAAcwA6AC8ALwBlAGMALgBlAHUAcgBvAHAAYQAuAGUAdQAvAGoAcgBjAC8AZQBuAC8AcAB1AGIAbABpAGMAYQB0AGkAbwBuAC8AZQB1AHIALQBzAGMAaQBlAG4AdABpAGYAaQBjAC0AYQBuAGQALQB0AGUAYwBoAG4AaQBjAGEAbAAtAHIAZQBzAGUAYQByAGMAaAAtAHIAZQBwAG8AcgB0AHMALwBsAGkAcwB2AGEAcAAtAGUAdgBhAHAAbwByAGEAdABpAG8AbgAtAHAAcgBlAC0AcAByAG8AYwBlAHMAcwBvAHIALQBsAGkAcwBmAGwAbwBvAGQALQB3AGEAdABlAHIALQBiAGEAbABhAG4AYwBlAC0AYQBuAGQALQBmAGwAbwBvAGQALQBzAGkAbQB1AGwAYQB0AGkAbwBuAC0AbQBvAGQAZQBsAA..&URL=https%3a%2f%2fec.europa.eu%2fjrc%2fen%2fpublication%2feur-scientific-and-technical-research-reports%2flisvap-evaporation-pre-processor-lisflood-water-balance-and-flood-simulation-model "
+        self.attributeDictionary['references' ] += "Burek et al., 2013. Evaporation Pre-Processor for the LISFLOOD Water Balance and Flood Simulation Model. JRC Technical Reports. doi: 10.2788/26000 "
         self.attributeDictionary['comment'    ]  = "Please use this dataset only for Hyper-Hydro test bed experiments. " 
         self.attributeDictionary['comment'    ] += "For using it and publishing it, please acknowledge its source: 5km Gridded Meteo Database (C) European Commission - JRDC, 2014 and its reference: Ntegeka et al., 2013 (doi: 10.2788/51262). "
         self.attributeDictionary['comment'    ] += "The original data provided by JRC are in European ETRS projection, 5km grid; http://en.wikipedia.org/wiki/European_grid. "
