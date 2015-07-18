@@ -59,7 +59,7 @@ try:
    output_netcdf['cell_resolution'] = float(sys.argv[3])/60.
 except:
    pass
-output_netcdf['folder']          = "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/netcdf_latlon/5min/"+varDict.netcdf_short_name[efas_variable_name]+"/"
+output_netcdf['folder']          = None # "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/netcdf_latlon/5min/"+varDict.netcdf_short_name[efas_variable_name]+"/"
 try:
    output_netcdf['folder']       = sys.argv[4]+"/"+varDict.netcdf_short_name[efas_variable_name]+"/"
 except:
