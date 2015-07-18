@@ -53,7 +53,12 @@ class CalcFramework(DynamicModel):
                                   self.pcraster_files['file_name']
 
         # object for reporting
-        self.netcdf_report = OutputNetcdf(cloneMapFileName, self.output['description'])       
+        self.netcdf_report = OutputNetcdf(mapattr_dict = None,\
+                                          cloneMapFileName = cloneMapFileName,\
+                                          netcdf_format = "NETCDF3_CLASSIC",\
+                                          netcdf_zlib = False,\
+                                          netcdf_attribute_dict = None,\
+                                          netcdf_attribute_description = self.output['description'])       
 
         # make a netcdf file
         self.netcdf_report.createNetCDF(self.output['file_name'],\
