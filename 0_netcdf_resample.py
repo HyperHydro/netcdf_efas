@@ -79,17 +79,18 @@ important_information += "and then aggregated to "+str(input_cell_size_in_arc_mi
 output_netcdf['format'] = "NETCDF3_CLASSIC"
 output_netcdf['zlib']   = False
 output_netcdf['netcdf_attribute'] = {}
-output_netcdf['netcdf_attribute']['institution'] = "European Commission - JRC and Department of Physical Geography, Utrecht University"
-output_netcdf['netcdf_attribute']['title'      ] = "EFAS-Meteo 5km for Rhine-Meuse - resampled to "+str(output_cell_size_in_arc_minutes)+" arc minute resolution. "
-output_netcdf['netcdf_attribute']['source'     ] = "5km Gridded Meteo Database (C) European Commission - JRDC, 2014"
-output_netcdf['netcdf_attribute']['history'    ] = "The data were provided by Ad de Roo (ad.de-roo@jrc.ec.europa.eu) on 19 November 2014 and then converted by Edwin H. Sutanudjaja (E.H.Sutanudjaja@uu.nl) to netcdf. "
+output_netcdf['netcdf_attribute']['institution']  = "European Commission - JRC and Department of Physical Geography, Utrecht University"
+output_netcdf['netcdf_attribute']['title'      ]  = "EFAS-Meteo 5km for Rhine-Meuse - resampled to "+str(output_cell_size_in_arc_minutes)+" arc minute resolution. "
+output_netcdf['netcdf_attribute']['source'     ]  = "5km Gridded Meteo Database (C) European Commission - JRDC, 2014"
+output_netcdf['netcdf_attribute']['history'    ]  = "The data were provided by Ad de Roo (ad.de-roo@jrc.ec.europa.eu) on 19 November 2014 and then converted by Edwin H. Sutanudjaja (E.H.Sutanudjaja@uu.nl) to netcdf. "
 output_netcdf['netcdf_attribute']['history'    ] += important_information 
-output_netcdf['netcdf_attribute']['references' ] = "Ntegeka et al., 2013. EFAS-Meteo: A European daily high-resolution gridded meteorological data set. JRC Technical Reports. doi: 10.2788/51262"
-output_netcdf['netcdf_attribute']['comment'    ] = "Please use this dataset only for Hyper-Hydro test bed experiments. " 
+output_netcdf['netcdf_attribute']['references' ]  = "Ntegeka et al., 2013. EFAS-Meteo: A European daily high-resolution gridded meteorological data set. JRC Technical Reports. doi: 10.2788/51262 ; "
+output_netcdf['netcdf_attribute']['references' ] += "Burek et al., 2013. Evaporation Pre-Processor for the LISFLOOD Water Balance and Flood Simulation Model. JRC Technical Reports. doi: 10.2788/26000 "
+output_netcdf['netcdf_attribute']['comment'    ]  = "Please use this dataset only for Hyper-Hydro test bed experiments. " 
 output_netcdf['netcdf_attribute']['comment'    ] += "For using it and publishing it, please acknowledge its source: 5km Gridded Meteo Database (C) European Commission - JRDC, 2014 and its reference: Ntegeka et al., 2013 (doi: 10.2788/51262). "
 output_netcdf['netcdf_attribute']['comment'    ] += "The original data provided by JRC are in European ETRS projection, 5km grid; http://en.wikipedia.org/wiki/European_grid. "
 output_netcdf['netcdf_attribute']['comment'    ] += important_information
-output_netcdf['netcdf_attribute']['description'] = varDict.description[efas_variable_name]
+output_netcdf['netcdf_attribute']['description']  = varDict.description[efas_variable_name]
 
 # make an output folder
 cleanOutputFolder = False

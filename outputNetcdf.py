@@ -52,13 +52,13 @@ class OutputNetcdf():
         # using a specific defined set of netCDF attributes
         if netcdf_attribute_dict != None:
             self.attributeDictionary = {}
-            self.attributeDictionary['institution'] = output_netcdf['netcdf_attribute']['institution']
-            self.attributeDictionary['title'      ] = output_netcdf['netcdf_attribute']['title'      ]
-            self.attributeDictionary['source'     ] = output_netcdf['netcdf_attribute']['source'     ]
-            self.attributeDictionary['history'    ] = output_netcdf['netcdf_attribute']['history'    ]
-            self.attributeDictionary['references' ] = output_netcdf['netcdf_attribute']['references' ]
-            self.attributeDictionary['comment'    ] = output_netcdf['netcdf_attribute']['comment'    ]
-            self.attributeDictionary['description'] = output_netcdf['netcdf_attribute']['description']
+            self.attributeDictionary['institution'] = netcdf_attribute_dict['institution']
+            self.attributeDictionary['title'      ] = netcdf_attribute_dict['title'      ]
+            self.attributeDictionary['source'     ] = netcdf_attribute_dict['source'     ]
+            self.attributeDictionary['history'    ] = netcdf_attribute_dict['history'    ]
+            self.attributeDictionary['references' ] = netcdf_attribute_dict['references' ]
+            self.attributeDictionary['comment'    ] = netcdf_attribute_dict['comment'    ]
+            self.attributeDictionary['description'] = netcdf_attribute_dict['description']
         
         # extra netcdf attribute ('description')
         if netcdf_attribute_description != None: self.attributeDictionary['description']  = netcdf_attribute_description
