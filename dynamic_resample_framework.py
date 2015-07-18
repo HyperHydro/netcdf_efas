@@ -98,11 +98,16 @@ class ResampleFramework(DynamicModel):
             self.clone_map_file = self.output_netcdf['clone_file']
         
         # an object for netcdf reporting
-        self.output = OutputNetcdf(self.output_netcdf)       
+        self.output = OutputNetcdf(mapattr_dict = self.output_netcdf,\  
+                                   cloneMapFileName = None,\
+                                   netcdf_format = self.output_netcdf['format'],\
+                                   netcdf_zlib = self.output_netcdf['zlib'],\
+                                   netcdf_attribute_dict = self.output_netcdf['netcdf_attribute'],\
+                                   netcdf_attribute_description = None)
         
         # preparing the netcdf file at coarse resolution:
-        self.output.createNetCDF(self.output_netcdf['file_name'],
-                                 self.output_netcdf['variable_name'],
+        self.output.createNetCDF(self.output_netcdf['file_name'],\
+                                 self.output_netcdf['variable_name'],\
                                  self.output_netcdf['variable_unit'])
         
     def initial(self): 

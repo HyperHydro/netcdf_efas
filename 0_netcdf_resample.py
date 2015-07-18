@@ -38,20 +38,32 @@ endDate   = "2014-10-31" # "2013-12-31" # "2014-10-31" #YYYY-MM-DD
 
 # input netcdf file:
 input_netcdf = {}
-input_netcdf['folder']           = "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/netcdf_latlon/2.5min/"+varDict.netcdf_short_name[efas_variable_name]+"/"
+input_netcdf['folder']           = None # "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/netcdf_latlon/2.5min/"+varDict.netcdf_short_name[efas_variable_name]+"/"
+try:
+   input_netcdf['folder'] = sys.argv[2]+"/"+varDict.netcdf_short_name[efas_variable_name]+"/"
+except:
+   pass
 input_netcdf['file_name']        = varDict.netcdf_short_name[efas_variable_name]+"_efas_rhine-meuse.nc"
 input_netcdf['file_name']        = input_netcdf['folder']+"/"+input_netcdf['file_name']
 input_netcdf['variable_name']    = varDict.netcdf_short_name[efas_variable_name]
-input_netcdf['clone_file']       = "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/cell_area_maps/RhineMeuseCellsize2.5min.map"
+input_netcdf['clone_file']       = "cell_area_maps/RhineMeuseCellsize2.5min.map"
 input_netcdf['cell_resolution']  = 2.5/60.
 # cell area (m2) for the input netcdf file:
-input_netcdf['cell_area']        = "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/cell_area_maps/RhineMeuseCellsize2.5min.map"
+input_netcdf['cell_area']        = "cell_area_maps/RhineMeuseCellsize2.5min.map"
 
 # output netcdf file:
 output_netcdf = {}
 # cell size/length/resolution (arc-degree) for the output netcdf file 
-output_netcdf['cell_resolution'] = 5./60.
+output_netcdf['cell_resolution'] = None # 5./60.
+try:
+   output_netcdf['cell_resolution'] = float(sys.argv[3])/60.
+except:
+   pass
 output_netcdf['folder']          = "/scratch/edwin/input/forcing/hyperhydro_wg1/EFAS/netcdf_latlon/5min/"+varDict.netcdf_short_name[efas_variable_name]+"/"
+try:
+   output_netcdf['folder']       = sys.argv[4]+"/"+varDict.netcdf_short_name[efas_variable_name]+"/"
+except:
+   pass
 output_netcdf['file_name']       = varDict.netcdf_short_name[efas_variable_name]+"_efas_rhine-meuse.nc"
 output_netcdf['file_name']       = output_netcdf['folder']+"/"+output_netcdf['file_name']
 output_netcdf['variable_name']   = input_netcdf['variable_name']
