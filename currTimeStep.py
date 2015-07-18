@@ -21,8 +21,8 @@ class ModelTime(object):
         # get endTime and nrOfTimeSteps 
         if strEndTime != None:
             ed = str(strEndTime).split('-')
-            endTime = datetime.date(int(ed[0]), int(ed[1]), int(ed[2]))
-            self._nrOfTimeSteps = 1 + (endTime - self.startTime).days
+            self._endTime = datetime.date(int(ed[0]), int(ed[1]), int(ed[2]))
+            self._nrOfTimeSteps = 1 + (self._endTime - self.startTime).days
 
         # get nrOfTimeSteps if defined:
         if strEndTime == None and nrOfTimeSteps != None:
