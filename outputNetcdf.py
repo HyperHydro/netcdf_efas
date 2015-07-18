@@ -22,7 +22,7 @@ class OutputNetcdf():
                        netcdf_format = "NETCDF3_CLASSIC",\
                        netcdf_zlib = False,\
                        netcdf_attribute_dict = None,\
-                       netcdf_attribute_description = None) 
+                       netcdf_attribute_description = None):
         		
         # netcdf format and zlib setup
         self.format = netcdf_format
