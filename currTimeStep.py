@@ -41,6 +41,10 @@ class ModelTime(object):
         return self._startTime
     
     @property    
+    def endTime(self):
+        return self._endTime
+
+    @property    
     def currTime(self):
         return self._currTime
 
@@ -119,6 +123,9 @@ class ModelTime(object):
         
         #tomorrow is the first day of the year
         return tomorrow.timetuple().tm_yday == 1
+
+    def isLastTimeStep(self):
+        return self._currTime == self._endTime
 
     #FIXME: use isLastDayOfMonth
     @property
