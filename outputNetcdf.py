@@ -17,7 +17,7 @@ filecache = dict()
 
 class OutputNetcdf():
     
-    def __init__(self, mapattr_dict,\ 
+    def __init__(self, mapattr_dict,\
                        cloneMapFileName = None,\ 
                        netcdf_format = "NETCDF3_CLASSIC",\ 
                        netcdf_zlib = False,\  
