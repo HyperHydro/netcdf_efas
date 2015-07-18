@@ -49,7 +49,7 @@ efas_variable_name = "ta"
 netcdf_short_name[efas_variable_name] = 'temperature'
 netcdf_unit[efas_variable_name]       = 'degrees Celcius'
 netcdf_long_name[efas_variable_name]  = 'daily_mean_precipitation'
-description[efas_variable_name]       = 'Daily mean temperature (ta) ; calculated using ta = (tx+tn)/2 ; with tx and ta are the maximum and minimum temperature values.'
+description[efas_variable_name]       = 'Daily mean temperature (ta) ; calculated using ta = (tx+tn)/2 ; with tx and tn are the maximum and minimum temperature values.'
 
 # ws Mean daily wind speed at 10 metres (m/s) calculated from 3-hourly observations (0-24 UTC) 
 efas_variable_name = "ws"
