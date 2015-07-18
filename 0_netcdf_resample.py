@@ -64,8 +64,8 @@ output_cell_size_in_arc_minutes = np.round(output_netcdf['cell_resolution'] * 60
 important_information  = "The dataset was first resampled to "+str(input_cell_size_in_arc_minutes)+" arc minute resolution "
 important_information += "and then aggregated to "+str(input_cell_size_in_arc_minutes)+" arc minute resolution."  
 #
-output_netcdf['format']    = "NETCDF3_CLASSIC"
-output_netcdf['zlib']      = False
+output_netcdf['format'] = "NETCDF3_CLASSIC"
+output_netcdf['zlib']   = False
 output_netcdf['netcdf_attribute'] = {}
 output_netcdf['netcdf_attribute']['institution'] = "European Commission - JRC and Department of Physical Geography, Utrecht University"
 output_netcdf['netcdf_attribute']['title'      ] = "EFAS-Meteo 5km for Rhine-Meuse - resampled to "+str(output_cell_size_in_arc_minutes)+" arc minute resolution. "
