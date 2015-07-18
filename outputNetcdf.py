@@ -50,7 +50,7 @@ class OutputNetcdf():
         self.attributeDictionary['comment'    ] += important_information 
 
         # using a specific defined set of netCDF attributes
-        if netcdf_attribute_dict != None:\        
+        if netcdf_attribute_dict != None:
             self.attributeDictionary = {}
             self.attributeDictionary['institution'] = output_netcdf['netcdf_attribute']['institution']
             self.attributeDictionary['title'      ] = output_netcdf['netcdf_attribute']['title'      ]
